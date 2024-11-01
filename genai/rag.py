@@ -27,15 +27,11 @@ embeddings = FastEmbedEmbeddings()
 db_chroma = Chroma.from_documents(chunks, embeddings, persist_directory=CHROMA_DATA_PATH)
 
 PROMPT_TEMPLATE = """
-Answer the question based only on the following context:
-{context}
-Answer the question based on the above context: {question}.
+Answer the {question} based on this context:
+{context} and whatever other information you have. 
+Your response must include any relevant information from {context}.
 Provide a detailed answer.
-Don’t justify your answers.
-Don’t give information not mentioned in the CONTEXT INFORMATION.
-Do not say "according to the context" or "mentioned in the context" or similar.
 """
-
 
 while True:
     query = input("\nQuery: ")

@@ -61,7 +61,7 @@ if __name__ == "__main__":
     # training data output has 4 values - each item corresponds to input row
     training_outputs = np.array([[0],
                                  [1],
-                                 [1],
+                                 [0],
                                  [0]])
     
     # initialize the neural net
